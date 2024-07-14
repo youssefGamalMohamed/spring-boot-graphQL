@@ -1,9 +1,16 @@
 package com.youssef.gamal.springboot.graphql.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "posts")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Post {
 
     @Id
@@ -16,5 +23,6 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @ToString.Exclude
     private User user;
 }

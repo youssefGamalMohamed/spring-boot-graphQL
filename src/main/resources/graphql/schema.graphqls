@@ -1,0 +1,27 @@
+type User {
+    id: ID,
+    name: String,
+    userName: String,
+    password: String,
+    age: String
+    posts: [Post]
+}
+
+type Post {
+    id: ID,
+    contentText: String,
+    likes: Int,
+    imageUrl: String
+}
+
+type Query {
+    findAllUsers: [User]
+}
+
+
+# mutation used when we want to (update, delete, create) new resource
+type Mutation {
+    createUser(name: String!, userName: String!, password: String!, age: String!): User
+    deleteUser(id: ID!): User
+    updateUser(id: ID, name: String!, userName: String!, password: String!, age: String!): User
+}
