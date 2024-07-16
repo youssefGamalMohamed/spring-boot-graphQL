@@ -43,4 +43,15 @@ public class UserService {
         userRepo.save(existing_user);
         return existing_user;
     }
+
+    public User follow(Long userId, Long followerId) {
+        log.info("UserService: follow({}, {})", userId, followerId);
+        User user = userRepo.findById(userId)
+                .orElseThrow();
+        User follower = userRepo.findById(followerId)
+                .orElseThrow();
+        user.getFollowers().add(follower);
+        userRepo.save(user);
+        return user;
+    }
 }

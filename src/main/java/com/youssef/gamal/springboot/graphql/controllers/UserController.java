@@ -59,4 +59,9 @@ public class UserController {
         user.setAge(age);
         return userService.updateById(id, user);
     }
+
+    @SchemaMapping(typeName = "Mutation", field = "followUser")
+    public User followUser(@Argument Long userId, @Argument Long followerId) {
+        return userService.follow(userId, followerId);
+    }
 }
