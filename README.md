@@ -1,7 +1,28 @@
-# Spring Boot GraphQL Example
+# Spring Boot GraphQL (Blog App) Example
 
-This project demonstrates how to integrate GraphQL with Spring Boot, utilizing MySQL for data persistence. It features basic CRUD operations for users and posts, along with a follow functionality between users.
+This project demonstrates how to integrate GraphQL with Spring Boot, utilizing MySQL for data persistence. It features basic CRUD operations for users and posts, along with a follow functionality between users in a Blog App.
 
+## Explain How It Works Both (REST, GraphQL) example
+- What we want to create to our front-end
+  ![What we want to create as a front-end](src/docs/what-we-want-to-create-as-front-end.png)
+- the following images will start discuss if we use normal REST Apis and if we use GraphQL
+  - here we need to create 3 endpoints to achieve our front-end
+    ![REST-APIs-1](src/docs/RESTAPIS-1.png)
+  - first call to retrieve user info
+    ![REST-APIs-2](src/docs/RESTAPI-2.png)
+  - second call to retrieve all posts of specific user
+    ![REST-APIs-2](src/docs/RESTAPIS-3.png)
+  - third call to retrieve all followers of specific user
+    ![REST-APIs-2](src/docs/RESTAPIS-4.png)
+  - the problem here that we make multiple request and retrieve multiple un-wanted data
+
+- the following images start to discuss the use of GraphQL
+   - prepare the GraphQl Query to fetch all needed data
+     ![GraphQl-1](src/docs/GraphQL-1.png)
+   - data returned from back-end
+     ![GraphQl-2](src/docs/GraphQL-2.png)
+   - display the data into front-end
+     ![GraphQl-3](src/docs/GraphQL-3.png)
 ## Technologies Used
 
 - **Spring Boot**: Framework for building the application.
