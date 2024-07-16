@@ -27,6 +27,17 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Post> posts;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Follower> followers;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_followers",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "follower_id")
+    )
+    @ToString.Exclude
+    private List<User> followers;
+
+    @ManyToMany(mappedBy = "followers")
+    @ToString.Exclude
+    private List<User> following;
 }

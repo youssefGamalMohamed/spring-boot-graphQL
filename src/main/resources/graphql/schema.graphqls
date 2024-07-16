@@ -3,8 +3,10 @@ type User {
     name: String,
     userName: String,
     password: String,
-    age: String
-    posts: [Post]
+    age: String,
+    posts: [Post],
+    followers: [User],
+    following: [User]
 }
 
 type Post {
